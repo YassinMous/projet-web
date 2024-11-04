@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sidebar with Nested Collapsible Menu</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+  <style>
+        .sidebar {
+      width: 250px;
+      height: 100vh;
+      background-color: #f8f9fa;
+      padding: 20px;
+      position: fixed;
+      overflow-y: auto;     }
+    .sidebar .nav-link {
+      display: flex;
+      align-items: center;
+      font-weight: 500;
+      color: #495057;
+      padding: 10px;
+      text-decoration: none;
+    }
+    .sidebar .nav-link .icon {
+      font-size: 1.5rem;
+      width: 35px;
+      text-align: center;
+    }
+    .sidebar .nav-link:hover {
+      background-color: #e9ecef;
+      border-radius: 5px;
+    }
+    .sidebar .section-title {
+      font-size: 0.9rem;
+      color: #6c757d;
+      margin: 15px 0 5px;
+      text-transform: uppercase;
+    }
+        .collapse-item {
+      padding-left: 30px;
+      color: #007bff !important;     }
+    .collapse-item:hover {
+      background-color: #d1e7dd !important;     }
+        .sub-collapse-item {
+      padding-left: 60px;
+      color: #6610f2 !important;     }
+    .sub-collapse-item:hover {
+      background-color: #d6d8ff !important;     }
+    .navigation-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+.navigation-buttons .btn-prev,
+.navigation-buttons .btn-next {
+  background-color: #2a7be3;   color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.navigation-buttons .btn-prev:hover,
+.navigation-buttons .btn-next:hover {
+  background-color: #1a5bb8; }
+
+.navigation-buttons .btn-prev:active,
+.navigation-buttons .btn-next:active {
+  background-color: #104080; }
+.btn-prev, .btn-next {
+    padding: 10px 15px;
+    margin: 0 5px;     font-size: 16px;
+    border-radius: 5px;
+}
+
+.navigation-buttons {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+.navigation-buttons a {
+    text-decoration: none; }
+.main-content {
+  margin-left: 270px;   padding: 20px;
+  background-color: #f4f8fb;   color: #333;   font-family: Arial, sans-serif;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);   border-radius: 8px;
+}
+
+
+
+
+
+  </style>
+</head>
+<body>
+    <div class="sidebar">
+      <a href="Accueil.html" class="nav-link">         <div class="icon">🏠</div>
+        <span>Accueil</span>
+      </a>
+
+      <p class="section-title">Cours</p>
+      <a class="nav-link" data-bs-toggle="collapse" href="#collapseInscrit" role="button" aria-expanded="false" aria-controls="collapseInscrit">
+        <div class="icon">🎓</div>
+        <span>CSS Cour</span>
+      </a>
+      <div class="collapse" id="collapseInscrit">
+                <a class="nav-link collapse-item" data-bs-toggle="collapse" href="#subCollapse1" role="button" aria-expanded="false" aria-controls="subCollapse1">Chapitre 1 : Introduction au CSS</a>
+        <div class="collapse" id="subCollapse1">
+          <a href="definitioncss.html" class="nav-link sub-collapse-item">Définition du CSS</a>
+        </div>
+    
+                <a class="nav-link collapse-item" data-bs-toggle="collapse" href="#subCollapse2" role="button" aria-expanded="false" aria-controls="subCollapse2">Chapitre 2 : Les méthodes d'intégration du CSS</a>
+        <div class="collapse" id="subCollapse2">
+          <a href="Style local dans la balise.html" class="nav-link sub-collapse-item">Style local dans la balise</a>
+          <a href="Style interne.html" class="nav-link sub-collapse-item">Style interne</a>
+          <a href="Style externe.html" class="nav-link sub-collapse-item">Style externe</a>
+        </div>
+    
+                <a class="nav-link collapse-item" data-bs-toggle="collapse" href="#subCollapse3" role="button" aria-expanded="false" aria-controls="subCollapse3">Chapitre 3 : Définir et appliquer un style CSS</a>
+        <div class="collapse" id="subCollapse3">
+          <a href="Définition d'un style.html" class="nav-link sub-collapse-item">Définition d'un style</a>
+          <a href="Exemples CSS.html" class="nav-link sub-collapse-item">Exemples CSS</a>
+          <a href="Appliquer un style à plusieurs balises.html" class="nav-link sub-collapse-item">Appliquer un style à plusieurs balises</a>
+          <a href="Commentaires en CSS.html" class="nav-link sub-collapse-item">Commentaires en CSS</a>
+    
+        </div>
+                    <a class="nav-link collapse-item" data-bs-toggle="collapse" href="#subCollapse4" role="button" aria-expanded="false" aria-controls="subCollapse4">Chapitre 4 : Sélecteurs et ciblage d'éléments</a>
+        <div class="collapse" id="subCollapse4">
+          <a href="Utiliser les classes.html" class="nav-link sub-collapse-item">Utiliser les classes</a>
+          <a href="L'attribut id.html" class="nav-link sub-collapse-item">L'attribut id</a>
+          <a href="Les balises universelles.html" class="nav-link sub-collapse-item">Les balises universelles</a>
+          <a href="Imbrications de balises.html" class="nav-link sub-collapse-item">Imbrications de balises</a>
+    
+        </div>
+                        <a class="nav-link collapse-item" data-bs-toggle="collapse" href="#subCollapse5" role="button" aria-expanded="false" aria-controls="subCollapse5">Chapitre 5 : Gestion de la typographie</a>
+        <div class="collapse" id="subCollapse5">
+          <a href="Taille du texte.html" class="nav-link sub-collapse-item">Taille du texte</a>
+          <a href="Police du texte.html" class="nav-link sub-collapse-item">Police du texte</a>
+          <a href="Alignement du texte.html" class="nav-link sub-collapse-item">Alignement du texte</a>
+          <a href="Indentation  mise en retrait du texte.html" class="nav-link sub-collapse-item">Indentation : mise en retrait du texte</a>
+          <a href="Effets de style sur le texte.html" class="nav-link sub-collapse-item">Effets de style sur le texte</a>
+          <a href="Majuscules en CSS.html" class="nav-link sub-collapse-item">Majuscules en CSS</a>
+          <a href="Décoration du texte.html" class="nav-link sub-collapse-item">Décoration du texte</a>
+    
+    
+        </div>
+                            <a class="nav-link collapse-item" data-bs-toggle="collapse" href="#subCollapse6" role="button" aria-expanded="false" aria-controls="subCollapse6">Chapitre 6 : Gestion des couleurs et des arrière-plans</a>
+        <div class="collapse" id="subCollapse6">
+          <a href="Couleur de fond.html" class="nav-link sub-collapse-item">Couleur de fond</a>
+          <a href="Dégradé de fond.html" class="nav-link sub-collapse-item">Dégradé de fond</a>
+          <a href="Image de fond.html" class="nav-link sub-collapse-item">Image de fond</a>
+          <a href="Répétition de l'image.html" class="nav-link sub-collapse-item">Image de fond:Répétition de l'image</a>
+          <a href="Position de l'image.html" class="nav-link sub-collapse-item">Image de fond:Position de l'image</a>
+        </div>
+                                <a class="nav-link collapse-item" data-bs-toggle="collapse" href="#subCollapse7" role="button" aria-expanded="false" aria-controls="subCollapse7">Chapitre 7 : Style des liens et pseudo-classes</a>
+        <div class="collapse" id="subCollapse7">
+          <a href="Style des liens.html" class="nav-link sub-collapse-item">Style des liens :</a>
+          <a href="Pseudo-classes.html" class="nav-link sub-collapse-item">Style des liens :Pseudo-classes</a>
+        </div>
+                                    <a class="nav-link collapse-item" data-bs-toggle="collapse" href="#subCollapse8" role="button" aria-expanded="false" aria-controls="subCollapse8">Chapitre 8 : Styles spécifiques</a>
+        <div class="collapse" id="subCollapse8">
+          <a href="Première lettre et première ligne.html" class="nav-link sub-collapse-item">Première lettre et première ligne</a>
+        </div>
+                                        <a class="nav-link collapse-item" data-bs-toggle="collapse" href="#subCollapse9" role="button" aria-expanded="false" aria-controls="subCollapse9">Chapitre 9 : Style des listes</a>
+        <div class="collapse" id="subCollapse9">
+          <a href="Style des listes .html" class="nav-link sub-collapse-item">Style des listes :</a>
+          <a href="Retrait.html" class="nav-link sub-collapse-item">Style des listes :Retrait</a>
+          <a href="Type des puces.html" class="nav-link sub-collapse-item">Style des listes :Type des puces</a>
+          <a href="Type de la numérotation.html" class="nav-link sub-collapse-item">Style des listes :Type de la numérotation</a>
+        </div>
+      </div>
+
+      <p class="section-title">Autres</p>
+      <a href="#" class="nav-link">
+        <div class="icon">📂</div>
+        <span>Cours archivés</span>
+      </a>
+      <a href="aboutus.html" class="nav-link">
+        <div class="icon">👥</div>
+        <span>À propos de nous</span>
+      </a>
+    </div>
+    <div class="main-content">
+      <h1>Style des listes :Retrait</h1>
+      <p>
+          La propriété <code>list-style-position</code> permet d'indiquer si l'on veut que la liste soit mise en retrait ou non.
+      </p>
+      <p>
+          <code>list-style-position</code> peut prendre 2 valeurs :
+      </p>
+      <ul>
+          <li><strong>inside</strong> : la liste n'est pas mise en retrait.</li>
+          <li><strong>outside</strong> : la liste est mise en retrait (par défaut).</li>
+      </ul>
+      
+      <h2>Exemple</h2>
+      <p>
+          Voici un exemple de liste avec les deux valeurs :
+      </p>
+      <h3>Exemple avec <code>outside</code> (par défaut)</h3>
+      <ul style="list-style-position: outside;">
+          <li>Liste <br>a puces</li>
+  
+      </ul>
+      
+      <h3>Exemple avec <code>inside</code></h3>
+      <ul style="list-style-position: inside;">
+        <li>Liste <br>a puces</li>
+       
+      </ul>
+  </div>
+  
+
+
+    <div class="navigation-buttons">
+       <a href="Première lettre et première ligne.html" class="btn-prev">Précédent</a>
+    <a href="Type des puces.html" class="btn-next">Suivant</a>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
